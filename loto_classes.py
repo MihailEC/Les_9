@@ -68,7 +68,7 @@ def circle_of_players(dice_list, players_list, count_players):
             elif choice_dice not in players_list[i].card_list and action == 'n':
                 continue
             elif choice_dice not in players_list[i].card_list and action == 'y':
-                print(f'Число в карточке нет! Игрок {players_list[i].name} проиграл!')
+                print(f'Числа в карточке нет! Игрок {players_list[i].name} проиграл!')
                 exit()
             else:
                 print('Неверно введено действие!')

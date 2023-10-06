@@ -27,4 +27,4 @@ for i in range(1, 91):
     for j in range(0, count_players):
         if players_list[j].card_list == win_list:
             print(f'Победил игрок {players_list[j].name}. Количество очков: {players_list[j].score}')
-            break
+            exit()
