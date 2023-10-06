@@ -2,10 +2,10 @@ import random
 
 
 class Player:
-    def __init__(self, count_players):
-        type_player = input(f'Игрок {count_players} человек или компьютер (ч/к): ')
-        type_player = type_player[:1]
-        type_player = type_player.lower()
+    def __init__(self, count_players, type_player):
+        # type_player = input(f'Игрок {count_players} человек или компьютер (ч/к): ')
+        # type_player = type_player[:1]
+        # type_player = type_player.lower()
         self.type = type_player
         if self.type == 'ч':
             name = input(f'Введите имя игрока {count_players}: ')
@@ -68,7 +68,7 @@ def circle_of_players(dice_list, players_list, count_players):
             elif choice_dice not in players_list[i].card_list and action == 'n':
                 continue
             elif choice_dice not in players_list[i].card_list and action == 'y':
-                print(f'Число в карточке нет! Игрок {players_list[i].name} проиграл!')
+                print(f'Числа в карточке нет! Игрок {players_list[i].name} проиграл!')
                 exit()
             else:
                 print('Неверно введено действие!')
