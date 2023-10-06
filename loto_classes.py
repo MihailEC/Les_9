@@ -28,10 +28,13 @@ class Player:
         card_list_1 = self.card_list[:5]
         card_list_2 = self.card_list[5:10]
         card_list_3 = self.card_list[10:15]
+        card_list_1 = map(str, card_list_1)
+        card_list_2 = map(str, card_list_2)
+        card_list_3 = map(str, card_list_3)
         print(f'------Карточка {self.name}------')
-        print(card_list_1)
-        print(card_list_2)
-        print(card_list_3)
+        print(' '.join(card_list_1))
+        print(' '.join(card_list_2))
+        print(' '.join(card_list_3))
         print('---------------------------------------')
 
 
