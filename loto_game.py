@@ -13,9 +13,8 @@ except ValueError:
 players_list = []
 try:
     for i in range(1, count_players + 1):
-        type_player = input(f'Игрок {count_players} человек или компьютер (ч/к): ')
-        type_player = type_player[:1]
-        type_player = type_player.lower()
+        type_player = input(f'Игрок {i} человек или компьютер (ч/к): ')
+        type_player = type_player[:1].lower()
         players_list.append(loto_classes.Player(i, type_player))
 except ValueError:
     print('Неверно введен тип игрока! Выходим')
