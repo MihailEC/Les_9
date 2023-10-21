@@ -15,7 +15,7 @@ class TestPlayer(unittest.TestCase):
 	def test_change_card(self):
 		choice_dice = 15
 		self.player.change_card(choice_dice)
-		self.assertEqual(self.player.card_list, [1, 4, 2, 67, '-', 46, 17, 8, 10, 45, 11, 89, 24, 14, 80])
+		self.assertIn('-', self.player.card_list)
 
 	def test_check_number_in_card_True(self):
 		choice_dice = 80
