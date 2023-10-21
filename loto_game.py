@@ -36,7 +36,7 @@ while dice_list != []:
 
     for i in range(0, count_players): # Цикл игры
         players_list[i].card_print() # Вывод карточки игрока
-        print(f'Ход игрока {players_list[i].name}.')
+        print(f'{str(players_list[i])} ходит')
         if players_list[i].check_type(): # проверка типа игрока (ч/к)
             action = input('Зачеркнуть цифру?(y/n): ') # предложение сделать ход если человек
             action = action[:1].lower()
@@ -44,11 +44,11 @@ while dice_list != []:
                 if action == 'y': # проверка введенного действия
                     players_list[i].change_card(choice_dice) # изменение карточки игрока
                 else:
-                    print(f'Число в карточке есть! Игрок {players_list[i].name} проиграл! Игра закончена.') # проигрыш игрока если он неверно выбрал
+                    print(f'Число в карточке есть! Игрок {str(players_list[i])} проиграл! Игра закончена.') # проигрыш игрока если он неверно выбрал
                     exit()
             else:
                 if action == 'y': # проверка введенного действия
-                    print(f'Числа в карточке нет! Игрок {players_list[i].name} проиграл! Игра закончена.') # проигрыш игрока если он неверно выбрал
+                    print(f'Числа в карточке нет! Игрок {str(players_list[i])} проиграл! Игра закончена.') # проигрыш игрока если он неверно выбрал
                     exit()
                 else:
                     continue # действие введено верно и игра продолжается
@@ -59,6 +59,6 @@ while dice_list != []:
                 continue # игра продолжается так как числа в карточке нет
 # Проверка на условие выйгрыша   
     for j in range(0, count_players):
-        if players_list[j].check_win(win_list):
-            print(f'Победил игрок {players_list[j].name}! Игра закончена.')
+        if players_list[j] == win_list:
+            print(f'Победил {str(players_list[i])}! Игра закончена.')
             exit()
