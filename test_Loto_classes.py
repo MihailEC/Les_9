@@ -32,12 +32,25 @@ class TestPlayer(unittest.TestCase):
 		self.player.type = 'к'
 		self.assertFalse(self.player.check_type())
 
-	def test_check_win_Fals(self):
-		win_list = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
-		self.assertFalse(self.player.check_win(win_list))
+	# def test_check_win_Fals(self):
+	# 	win_list = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+	# 	self.assertFalse(self.player.check_win(win_list))
 
-	def test_check_win_True(self):
-		self.player.card_list = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
-		win_list = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
-		self.assertTrue(self.player.check_win(win_list))
+	# def test_check_win_True(self):
+	# 	self.player.card_list = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+	# 	win_list = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+	# 	self.assertTrue(self.player.check_win(win_list))
+
+	def test_str(self):
+		player_str = str(self.player)
+		compare_str = f'Игрок {self.player.number_player}: {self.player.name}'
+		self.assertEqual(player_str, compare_str)
+
+	def test_eq_True(self):
+		other = [1, 4, 2, 67, 15, 46, 17, 8, 10, 45, 11, 89, 24, 14, 80]
+		self.assertTrue(self.player.__eq__(other))
+
+	def test_eq_False(self):
+		other = ['-', '-', 2, 67, 15, 46, 17, 8, 10, 45, 11, 89, 24, 14, 80]
+		self.assertFalse(self.player.__eq__(other))
 
